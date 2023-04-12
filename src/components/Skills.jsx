@@ -17,6 +17,8 @@ import tailwindcss from '../assets/tailwindcss.png';
 import unrealengine from '../assets/unrealengine.png';
 import AWS from '../assets/aws.png';
 
+import '../css/skills.css';
+
 const Skills = () => {
   return (
     <div name='skills' className='w-full h-full bg-[#0a192f] text-gray-300'>
