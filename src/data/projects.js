@@ -1,6 +1,7 @@
 import SeneConnect from '../assets/seneconnect.png'
 import MovieFinder from '../assets/movie_finder.png'
 import PyHeart from '../assets/pyheart.png'
+import ChatApp from '../assets/chat-app.png'
 
 export const projects=[
     {
@@ -22,6 +23,13 @@ export const projects=[
         name:"PyHeart",
         image:PyHeart,
         github:"https://github.com/NateKenopic/pyheart",
+        live:"",
+    },
+    {
+        id:4,
+        name:"Chat-App",
+        image:ChatApp,
+        github:"https://github.com/NateKenopic/chat-app",
         live:"",
     },
 ]
