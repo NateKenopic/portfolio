@@ -3,6 +3,7 @@ import MovieFinder from '../assets/movie_finder.png'
 import PyHeart from '../assets/pyheart.png'
 import ChatApp from '../assets/chat-app.png'
 import ThreeDWebsite from '../assets/3d-website.png'
+import BankApp from '../assets/bank-app.png'
 
 export const projects=[
     {
@@ -39,5 +40,12 @@ export const projects=[
         image:ThreeDWebsite,
         github:"https://github.com/NateKenopic/3d-website",
         live:"https://nathankenopic-3d-sphere.netlify.app/",
+    },
+    {
+        id:6,
+        name:"Python Bank App",
+        image:BankApp,
+        github:"https://github.com/NateKenopic/bank_app",
+        live:"",
     },
 ]
