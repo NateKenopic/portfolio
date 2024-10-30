@@ -6,6 +6,8 @@ import ChatApp from '../assets/chat-app.png'
 import BankApp from '../assets/bank-app.png'
 import ThreeDCar from '../assets/3d-car-site.png'
 import ThreeDBatman from '../assets/3d-batman.png'
+import FragmentsMicroservice from '../assets/fragments.png'
+import DuneGame from '../assets/Dune_TheGame.png'
 
 export const projects=[
     {
@@ -50,18 +52,32 @@ export const projects=[
         github:"https://github.com/NateKenopic/bank_app",
         live:"",
     },
+    // {
+    //     id:7,
+    //     name:"Interactive 3D Car",
+    //     image:ThreeDCar,
+    //     github:"https://github.com/NateKenopic/3d-car",
+    //     live:"https://nathankenopic-3d-car.netlify.app/",
+    // },
+    // {
+    //     id:8,
+    //     name:"Gotham City's Vigilante",
+    //     image:ThreeDBatman,
+    //     github:"https://github.com/NateKenopic/3d-batman",
+    //     live:"https://nathankenopic-3d-batman.netlify.app/",
+    // },
     {
-        id:7,
-        name:"Interactive 3D Car",
-        image:ThreeDCar,
-        github:"https://github.com/NateKenopic/3d-car",
-        live:"https://nathankenopic-3d-car.netlify.app/",
+        id:9,
+        name:"Fragments Microservice",
+        image:FragmentsMicroservice,
+        github:"",
+        live:"",
     },
     {
-        id:8,
-        name:"Gotham City's Vigilante",
-        image:ThreeDBatman,
-        github:"https://github.com/NateKenopic/3d-batman",
-        live:"https://nathankenopic-3d-batman.netlify.app/",
+        id:10,
+        name:"Dune - UE5 Game",
+        image:DuneGame,
+        github:"https://github.com/NateKenopic/Dune-Game",
+        live:"",
     },
 ]
