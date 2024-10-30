@@ -27,11 +27,14 @@ const Projects = () => {
                   {item.name}
                 </span>
                 <div className="pt-8 text-center ">
+                  {item.github !== "" ? 
                   <a href={item.github} target="blank">
                     <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
                       GitHub
                     </button>
-                  </a>
+                  </a> 
+                  : <></>
+                  }
 
                   {item.live !== "" ?
                     <a href={item.live} target='blank'>
