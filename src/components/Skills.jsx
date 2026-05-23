@@ -1,116 +1,66 @@
-import React from 'react';
+import { motion } from 'framer-motion';
+import { skills } from '../data/skills';
+import AnimatedSection from './ui/AnimatedSection';
+import SectionHeading from './ui/SectionHeading';
 
-import HTML from '../assets/html.png';
-import CSS from '../assets/css.png';
-import java from '../assets/java.png';
-import javascript from '../assets/javascript.png';
-import jquery from '../assets/jquery.png';
-import c from '../assets/c.png';
-import c_plusplus from '../assets/c++.png';
-import node from '../assets/node.png';
-import mongodb from '../assets/mongodb.png';
-import mysql from '../assets/mysql.png';
-import postgresql from '../assets/postgresql.png';
-import python from '../assets/python.png';
-import react from '../assets/react.png';
-import tailwindcss from '../assets/tailwindcss.png';
-import unrealengine from '../assets/unrealengine.png';
-import AWS from '../assets/aws.png';
+const gridVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.04, delayChildren: 0.15 },
+  },
+};
 
-const Skills = () => {
+const cardVariants = {
+  hidden: { opacity: 0, scale: 0.92, y: 16 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+export default function Skills() {
   return (
-    <div name='skills' className='w-full h-full bg-[#0a192f] text-gray-300'>
-      <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full'>
-        <div className='justify-center text-center'>
-          <p className='text-4xl font-bold inline border-b-4 border-[#ff0000]'>Skills</p>
-          <p className='py-4'>These are the technologies I have worked with</p>
-        </div>
+    <AnimatedSection
+      name="skills"
+      id="skills"
+      className="section-padding bg-surface/50 border-y border-border"
+    >
+      <div className="mx-auto max-w-6xl">
+        <SectionHeading
+          label="02 — Skills"
+          title="Technologies I work with"
+          description="Languages, frameworks, and tools I've used across personal and professional projects."
+        />
 
-        <div className='hide-scroll w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8'>
-          <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={HTML} alt="HTML Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>HTML</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={CSS} alt="CSS Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>CSS</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={java} alt="Java Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>Java</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={javascript} alt="Javascript Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>Javascript</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={jquery} alt="JQuery Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>JQuery</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={c} alt="C Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>C</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={c_plusplus} alt="C++ Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>C++</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={node} alt="NodeJS Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>NodeJS</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={mongodb} alt="MongoDB Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>MongoDB</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={mysql} alt="MySQL Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>MySQL</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={postgresql} alt="PostgreSQL Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>PostgreSQL</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={python} alt="Python Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>Python</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={react} alt="ReactJS Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>ReactJS</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={tailwindcss} alt="Tailwind CSS Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>Tailwind CSS</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={unrealengine} alt="Unreal Engine Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>Unreal Engine</p>
-          </div>
-
-          <div className='hide-scroll shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-            <img src={AWS} alt="AWS Logo" className='w-28 mx-auto h-28 mt-7' />
-            <p className='my-4'>AWS</p>
-          </div>
-
-        </div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={gridVariants}
+          className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:gap-5"
+        >
+          {skills.map(({ name, Icon }) => (
+            <motion.div
+              key={name}
+              variants={cardVariants}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="group flex flex-col items-center rounded-2xl border border-border bg-elevated/80 p-5 backdrop-blur transition-colors hover:border-accent/40 hover:shadow-glow"
+            >
+              <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-xl border border-border/50 bg-canvas/50 transition-all duration-300 group-hover:scale-110 group-hover:border-accent/30 group-hover:bg-surface">
+                <Icon
+                  className="h-11 w-11 text-muted transition-colors duration-300 group-hover:text-accent"
+                  aria-hidden
+                />
+              </div>
+              <p className="text-center text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-accent">
+                {name}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </div>
-  )
+    </AnimatedSection>
+  );
 }
-
-export default Skills

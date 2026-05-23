@@ -2,29 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+/* ── Light theme (default) ── */
+html[data-theme='light'],
+html:not([data-theme]):not(.dark) {
+  color-scheme: light;
+
+  --color-canvas: 241 245 249;
+  --color-surface: 255 255 255;
+  --color-elevated: 226 232 240;
+  --color-border: 203 213 225;
+  --color-muted: 100 116 139;
+  --color-foreground: 15 23 42;
+  --color-on-accent: 255 255 255;
+  --color-accent: 8 145 178;
+  --color-accent-dim: 14 116 144;
+  --shadow-glow: 0 0 40px -10px rgba(8, 145, 178, 0.35);
+  --shadow-card: 0 4px 24px -4px rgba(15, 23, 42, 0.1);
+  --grid-line: 0 0 0 / 0.07;
+  --hero-glow-1: rgba(8, 145, 178, 0.15);
+  --hero-glow-2: rgba(124, 58, 237, 0.1);
+}
+
+/* ── Dark theme ── */
+html[data-theme='dark'],
+html.dark {
+  color-scheme: dark;
+
+  --color-canvas: 3 7 18;
+  --color-surface: 15 23 42;
+  --color-elevated: 30 41 59;
+  --color-border: 51 65 85;
+  --color-muted: 148 163 184;
+  --color-foreground: 248 250 252;
+  --color-on-accent: 3 7 18;
+  --color-accent: 34 211 238;
+  --color-accent-dim: 8 145 178;
+  --shadow-glow: 0 0 40px -10px rgba(34, 211, 238, 0.4);
+  --shadow-card: 0 4px 24px -4px rgba(0, 0, 0, 0.55);
+  --grid-line: 255 255 255 / 0.04;
+  --hero-glow-1: rgba(34, 211, 238, 0.2);
+  --hero-glow-2: rgba(167, 139, 250, 0.14);
+}
 
 @layer base {
-    body {
-        @apply font-[Quicksand];
-    }
-    li {
-        @apply px-4;
-        @apply cursor-pointer;
-    }
+  html,
+  body,
+  #root {
+    min-height: 100%;
+    background-color: rgb(var(--color-canvas));
+    color: rgb(var(--color-foreground));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    transition:
+      background-color 0.35s ease,
+      color 0.35s ease;
+  }
+
+  ::selection {
+    background-color: rgb(var(--color-accent) / 0.3);
+    color: rgb(var(--color-foreground));
+  }
 }
 
-.content-div {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 250px;
-}
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-violet-500 bg-clip-text text-transparent;
+  }
 
-.content-div:hover {
-    background-image: linear-gradient(
-        to right,
-        rgba(112, 157, 255, 0.8),
-        hsla(242, 74%, 61%, 0.8)   
-    )!important;
+  .glass {
+    background-color: rgb(var(--color-surface) / 0.88);
+    border: 1px solid rgb(var(--color-border) / 0.8);
+    @apply backdrop-blur-xl;
+  }
+
+  .section-padding {
+    @apply px-6 py-24 md:px-8 lg:py-32;
+  }
+
+  .theme-canvas {
+    background-color: rgb(var(--color-canvas));
+    color: rgb(var(--color-foreground));
+    transition:
+      background-color 0.35s ease,
+      color 0.35s ease,
+      border-color 0.35s ease;
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, rgb(var(--grid-line)) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--grid-line)) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .bg-hero-gradient {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, var(--hero-glow-1), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, var(--hero-glow-2), transparent);
+  }
 }
